@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Phone info</h2>
+  <br />
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% if session.logged_in %}
+    <form action="{{ url_for('phones.phone', model=entry.model) }}" method="post" class="phone">
+      <input type="hidden" name="model" value="{{ entry.model }}">
+      <input type="hidden" name="tag" value="tag">
+      <input type="hidden" name="method" value="DELETE">
+      <input type="submit" value="Delete">
+    </form>
+    <form action="{{ url_for('phones.phone', model=entry.model) }}" method="post" class="phone">
+      <dl>
+        <dt>model:
+        <dd><input type='text' size="30" name="model" value="{{ entry.model }}" readonly="True">
+        <dt>tag:
+        <dd><input type='text' size="30" name="tag" value="{{ entry.tag }}">
+        <dd><input type="submit" value="Update">
+      </dl>
+      <input type="hidden" name="method" value="PUT">
+    </form>
+  {% endif %}
+{% endblock %}

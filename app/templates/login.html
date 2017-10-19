@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if not session.logged_in %}
+    <h2>Login</h2>
+    <br />
+    {% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}
+    {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+    <form action="{{ url_for('login.login') }}" method="post">
+      <dl>
+        <dt>Username:
+        <dd><input type="text" name="username">
+        <dt>Password:
+        <dd><input type="password" name="password">
+        <dd><input type="submit" value="Login">
+      </dl>
+    </form>
+  {% else %}
+    <h2>You are already logged in</h2>
+  {% endif %}
+{% endblock %}

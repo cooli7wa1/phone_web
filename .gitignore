@@ -1,0 +1,5 @@
+*.pyc
+download/*
+upload/*
+venv
+.idea

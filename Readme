@@ -1,0 +1,4 @@
+1. mkdir upload
+2. mkdir download
+3. change instance/config.py special
+4. python run.py to run web

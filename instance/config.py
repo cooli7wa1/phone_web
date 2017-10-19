@@ -1,0 +1,11 @@
+DEBUG = True
+UPLOAD_FOLD = '/home/cooli7wa/Documents/flask/upload'
+DOWNLOAD_FOLD = '/home/cooli7wa/Documents/flask/download'
+SECRET_KEY = b'flask'
+SEND_FILE_MAX_AGE_DEFAULT = 1
+MONGO_PHONE_HOST = 'localhost'
+MONGO_PHONE_PORT = 27017
+MONGO_PHONE_DBNAME = 'test'
+MONGO_USER_HOST = 'localhost'
+MONGO_USER_PORT = 27017
+MONGO_USER_DBNAME = 'user'
